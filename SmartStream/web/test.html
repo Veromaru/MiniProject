@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eel Example</title>
+</head>
+<body>
+    <input type="text" id="input-value">
+    <button onclick="callPythonFunction()">Call Python Function</button>
+    <p id="result"></p>
+</body>
+<script src="eel.js"></script>
+<script>
+    function callPythonFunction() {
+        var inputValue = document.getElementById("input-value").value;
+        eel.my_function(inputValue)(function(result) {
+            document.getElementById("result").textContent = result;
+        });
+    }
+</script>
+</html>

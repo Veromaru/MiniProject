@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStream</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet"> -->
+
+  </head>
+  <body onclick="bodyf()">
+    <section class="hero-section">
+      <div class="hero-wrapper">
+        <!-- navigation  -->
+        <nav>
+          <div class="nav-bar">
+            <div>
+              <span class="day">Day</span>
+              <span class="month">Date</span>
+            </div>
+            <div id="weather">
+              <i class="bi bi-clouds"></i>
+              <span class="month">Retrieving...</span>
+            </div>
+            <div class="user-container">
+              <span class="time">00:00</span>
+              <span class="user-greeting"> Hi, user.name!</span>
+              <img src="assets/profile-pic.png" alt="User Profile Image" class="user-img">
+            </div>
+          </div>
+        </nav>
+        <!-- search  -->
+        <div>
+          <form action="/" class="search-form">
+            <div class="search-container">
+              <input type="text" class="search" name="search" id="search" placeholder="Search">
+              <button type="submit" class="search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- actions -->
+        <div class="actions-container">
+          <div class="buttons-row">
+          <!-- <button onclick="openModal('wifiModal')">
+              <i class="bi bi-wifi"></i>
+              <p id="wifiname">no networks connected for now</p>
+            </button> -->
+            <!-- <button onclick="openModal('clockModal')">
+              <i class="bi bi-clock-history"></i>
+            </button> -->
+            <!-- <button onclick="openModal('settings')">
+              <i class="bi bi-gear"></i>
+            </button> -->
+            <button onclick="openModal('voiceModal')">
+              <i class="bi bi-mic"></i>
+            </button>
+           <button onclick="openModal('handtouchModal')">
+              <i class="bi bi-pip"></i>
+            </button> 
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- apps-section -->
+    <section class="apps-section d-flex flex-column align-items-start">
+      <h2>Video Streaming WebApps</h2>
+       <div class="apps-items">
+        <div class="app-item" onclick="open_website_pyqt('https://www.videostoti.com')">
+            <img src="assets/logo/vt.jpg" alt="VideosToti" class="app-logo">
+            <h2>VideosToti</h2>
+          </div>
+        <div class="app-item" onclick="open_website_pyqt('https://www.netflix.com')">
+          <img src="assets/logo/netflix2.jpg" alt="Netflix" class="app-logo">
+          <h2>Netflix</h2>
+        </div>
+        <div class="app-item" onclick="open_website_pyqt('https://www.youtube.com')">
+          <img src="assets/logo/yt.jpg" alt="YouTube" class="app-logo">
+          <h2>YouTube</h2>
+        </div>
+        <div class="app-item" onclick="open_website_pyqt('https://www.primevideo.com')">
+          <img src="assets/logo/ampv.png" alt="Amazon Prime Video" class="app-logo">
+          <h2>Prime Video</h2>
+        </div>
+        <div class="app-item" onclick="open_website_pyqt('https://www.disneyplus.com')">
+          <img src="assets/logo/disney.jpg" alt="Disney+" class="app-logo">
+          <h2>Disney+</h2>
+        </div>
+        <div class="app-item" onclick="open_website_pyqt('https://www.max.com/')">
+          <img src="assets/logo/hbomax.png" alt="HBO Max" class="app-logo">
+          <h2>HBO Max</h2>
+        </div>
+
+
+        <div class="app-item" onclick="open_website_pyqt('https://tubitv.com/home')">
+          <img src="assets/logo/tubi.png" alt="Tubi" class="app-logo">
+          <h2>Tubi</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="apps-section  d-flex flex-column align-items-start">
+      <h2>Music Streaming WebApps</h2>
+    <div class="apps-items">
+      <div class="app-item">
+        <img src="assets/logo/spotify2.png" alt="Spotify" class="app-logo" onclick="open_website_pyqt('https://open.spotify.com/')">
+        <h2>Spotify</h2>
+      </div>
+      <div class="app-item">
+        <img src="assets/logo/applemusic.jpg" alt="am" class="app-logo" onclick="open_website_pyqt('https://music.apple.com/us/new')">
+        <h2>Applemusic</h2>
+      </div>
+      <div class="app-item">
+        <img src="assets/logo/Fakaza.png" alt="fakaza" class="app-logo" onclick="open_website_pyqt('https://fakaza.com/')">
+        <h2>Fakaza</h2>
+      </div>
+      <div class="app-item mb-3">
+        <img src="assets/logo/amazonmusic.png" alt="amazon" class="app-logo" onclick="open_website_pyqt('https://music.amazon.com/')">
+        <h2>Amazon music</h2>
+      </div>
+      <div class="app-item mb-3">
+        <img src="assets/logo/soundcloud.jpg" alt="sound" class="app-logo" onclick="open_website_pyqt('https://music.soundcloud.com/')">
+        <h2>Sound Cloud</h2>
+      </div>
+
+      <div class="app-item mb-3">
+        <img src="assets/logo/audiomack.webp" alt="audio" class="app-logo" onclick="open_website_pyqt('https://music.audiomack.com/')">
+        <h2>Audiomack</h2>
+      </div>
+      <div class="app-item mb-3">
+        <img src="assets/logo/ytmusic.jpg" alt="yt" class="app-logo" onclick="open_website_pyqt('https://music.youtube.com/')">
+        <h2>YoutubeMusic</h2>
+      </div>
+    </div>
+  </section>
+
+    <section class="apps-section  d-flex flex-column align-items-start">
+      <h2>Social Media WebApps</h2>
+    <div class="apps-items">
+      <div class="app-item" onclick="open_website_pyqt('https://www.facebook.com/')">
+          <img src="assets/logo/facebook.jpg" alt="Facebook" class="app-logo">
+          <h2>Facebook</h2>
+      </div>
+      <div class="app-item" onclick="open_website_pyqt('https://web.whatsapp.com/')">
+        <img src="assets/logo/whatsapp.jpg" alt="whatsapp" class="app-logo">
+        <h2>Whatsapp</h2>
+    </div>
+
+    <div class="app-item" onclick="open_website_pyqt('https://x.com')">
+      <img src="assets/logo/twitter.jpg" alt="X" class="app-logo">
+      <h2>X</h2>
+  </div>
+      <div class="app-item" onclick="open_website_pyqt('https://www.instagram.com/')">
+          <img src="assets/logo/instagram.jpg" alt="Instagram" class="app-logo">
+          <h2>Instagram</h2>
+      </div>
+      <div class="app-item" onclick="open_website_pyqt('https://www.tiktok.com/')">
+          <img src="assets/logo/tiktok2.jpg" alt="tiktok" class="app-logo">
+          <h2>Tiktok</h2>
+      </div>
+      <div class="app-item" onclick="open_website_pyqt('https://www.reddit.com')">
+        <img src="assets/logo/reddit.png" alt="reddit" class="app-logo">
+        <h2>Reddit</h2>
+    </div>
+    <div class="app-item" onclick="open_website_pyqt('https://web.telegram.org')">
+      <img src="assets/logo/telegram.png" alt="telegram" class="app-logo">
+      <h2>Telegram</h2>
+  </div>
+  <div class="app-item" onclick="open_website_pyqt('https://www.zoom.com')">
+    <img src="assets/logo/zoom.jpg" alt="zoom" class="app-logo">
+    <h2>Zoom</h2>
+  </div>
+  <div class="app-item" onclick="open_website_pyqt('https://www.snapchat.com/')">
+    <img src="assets/logo/snapchat.webp" alt="snap" class="app-logo">
+    <h2>Snapchat</h2>
+  </div>
+    </div>
+  </section>
+
+  <section class="apps-section d-flex flex-column align-items-start">
+    <h2>Book Streaming WebApps</h2>
+  <div class="apps-items">
+    <div class="app-item" onclick="open_website_pyqt('https://darkcyan-swallow-427145.hostingersite.com/pages/all_products.php')">
+      <img src="assets/logo/bookworm.jfif" alt="VideosToti" class="app-logo">
+      <h2>Bookworm</h2>
+    </div>
+    <div class="app-item" onclick="open_website_pyqt('https://www.hoopladigital.com')">
+      <img src="assets/logo/hoopla.png" alt="hoopla" class="app-logo">
+      <h2>Hoopla</h2>
+    </div>
+    <div class="app-item" onclick="open_website_pyqt('https://www.everand.com/books?utm_medium=cpc&utm_source=google_pmax&utm_campaign=Everand_Google_Performance-Max_NB_All_tROAS&utm_term=&utm_device=c&gad_source=1&gclid=CjwKCAjw9eO3BhBNEiwAoc0-jfh1vyIthETaVwpaS54yd6t7OZqDA-imE1KpU-5_OnQrLkRZEowzQBoC4MYQAvD_BwE')">
+      <img src="assets/logo/everand.png" alt="hoopla" class="app-logo">
+      <h2>Everand</h2>
+    </div>
+  </div>
+</section>
+
+<section class="apps-section d-flex flex-column align-items-start">
+  <h2>Commerce WebApps</h2>
+  <div class="app-item" onclick="open_website_pyqt('https://www.amazon.com/')">
+    <img src="assets/logo/amazon-logo-1024x683.png" alt="amazon" class="app-logo">
+    <h2>Amazon</h2>
+  </div>
+
+  <div class="app-item" onclick="open_website_pyqt('https://www.ebay.com')">
+    <img src="assets/logo/ebay.jpg" alt="ebay" class="app-logo">
+    <h2>Ebay</h2>
+  </div>
+
+  <div class="app-item" onclick="open_website_pyqt('https://www.alibaba.com')">
+    <img src="assets/logo/alibaba.png" alt="alibaba" class="app-logo">
+    <h2>Alibaba</h2>
+  </div>
+
+</section>
+
+<!-- <section class="apps-section">
+  <div class="app-item"></div>
+</section> -->
+
+
+      <form id="passinput" onsubmit="submitForm(event)">
+        <h6 class="popup-close" onclick="close()">Close</h6>
+        <i class="bi bi-wifi wifi-icon"></i>
+        <h4 id="connwifiname">Wifi Networks</h4>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" placeholder="Enter Password, leave empty if none">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" placeholder="Enter Password, leave empty if none">
+        <button type="submit">Connect</button>
+      </form>
+
+
+      <!-- WiFi Modal -->
+  <div id="wifiModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('wifiModal')">&times;</span>
+      <h2>Available WiFi Networks</h2>
+  
+      <div class="wifi-network">
+        <i class="bi bi-wifi"></i>
+        <span class="wifi-name">{{ wifi_name }}</span>
+        <button class="connect-btn" onclick="openModal('connectwifi')">Connect</button>
+      </div>
+      <button class="search-ntw"><a href="{{ url_for('trigger_python_function') }}" class="scan-link">Scan for available networks</a></button>
+    </div>
+  </div>
+
+
+  <!-- CONNECT WIFI MODAL -->
+  <div id="connectwifi" class="modal">
+    <div class="modal-content handtouch-modal-content">
+      <span class="close" onclick="closeModal('connectwifi')">&times;</span>
+       <form>
+        <h4 id="connwifiname">Wifi Network name</h4>
+        <label for="password">Enter Username:</label>
+        <input type="text" id="username" placeholder="Enter Password, leave empty if none">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" placeholder="Enter Password, leave empty if none">
+        <input type="checkbox">Show Password</input>
+        <button>Connect</button>
+        <input type="checkbox">Show password
+       </form>
+    </div>
+  </div>
+
+  <!-- Clock Modal -->
+  <div id="clockModal" class="modal">
+    <div class="modal-content clock-modal-content">
+      <span class="close" onclick="closeModal('clockModal')">&times;</span>
+      <h2>Time</h2>
+      <div class="timewithseconds" id="clock">00:00:00</div>
+      <div class="timer-buttons">
+        <button class="timer-button" id='buffer'><i class="bi bi-clock"></i></button>
+        <button class="timer-button"><i class="bi bi-alarm"></i></button>
+        <button class="timer-button"><i class="bi bi-hourglass"></i></button>
+      </div>
+    </div>
+
+    <div class="modal-content clock-modal-content">
+      <span class="close" onclick="closeModal('clockModal')">&times;</span>
+      <h2>Alarm</h2>
+      <div class="timewithseconds" id="clock">00:00:00</div>
+      <div class="timer-buttons">
+        <button class="timer-button"><i class="bi bi-clock"></i></button>
+        <button class="timer-button" id='buffer'><i class="bi bi-alarm"></i></button>
+        <button class="timer-button"><i class="bi bi-hourglass"></i></button>
+      </div>
+    </div>
+
+    <div class="modal-content clock-modal-content">
+      <span class="close" onclick="closeModal('clockModal')">&times;</span>
+      <h2>Timer</h2>
+      <div class="timewithseconds" id="clock">00:00:00</div>
+      <div class="timer-buttons">
+        <button class="timer-button"><i class="bi bi-clock"></i></button>
+        <button class="timer-button"><i class="bi bi-alarm"></i></button>
+        <button class="timer-button" id='buffer'><i class="bi bi-hourglass"></i></button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Handtouch Modal -->
+  <div id="handtouchModal" class="modal">
+    <div class="modal-content handtouch-modal-content">
+      <span class="close" onclick="closeModal('handtouchModal')">&times;</span>
+      <p>No touch is a software that allows control of cursor using hands</p>
+      <div class="icon-buttons">
+        <button class="btn btn-primary" id="start2-button">
+          <a id="start-link2"><i class="bi bi-play"></i> Start</a> 
+         </button>
+        <button>
+          <i class="bi bi-stop"></i> Hover Over The camera tab and press CONTROL + S
+        </button>
+        <button>
+          <i class="bi bi-controller"></i> Game
+        </button>
+      </div>
+      <div id="loading2" style="display: none; text-align: center; margin-top: 20px;">
+        <img src="assets/loading.gif" alt="Loading..." width="100px" height="100px" />
+       </div>
+    </div>
+  </div>
+  
+       <!-- END OF Handtouch Modal -->
+
+
+     <div id="voiceModal" class="modal">
+      <div class="modal-content voice-modal-content">
+        <span class="close" onclick="closeModal('voiceModal')">&times;</span>
+        <h2>Hello, call me linda. How may I help you?</h2>
+        <div id="voiceOutput"></div>
+        <div id="listeningFeedback" style="display: none;">
+          <div class="listening-animation">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="container" style="display: flex; margin-top: 20px; float: left;">
+          <h4 style="margin-top: 30px; margin-bottom: 20px; font-size: 32px; text-align: left;">Example Commands for Linda</h4>
+          <div class="card" style="width: 40%; padding: 10px; font-weight: 500; font-size: 15px; border: 1px solid white; border-radius: 20px; margin-bottom: 20px; margin-right: 10px;">
+              <h1>Basic</h1>
+              <p> - linda open netflix</p>
+              <p> - linda create file</p>
+              <p> - linda list files</p>
+              <p> - linda guide</p>
+          </div>
+          <div class="card" style="width: 40%; padding: 10px; font-weight: 500; font-size: 15px; border: 1px solid white; border-radius: 20px; margin-bottom: 20px; margin-right: 10px;">
+            <h1>Educational</h1>
+            <p> - linda how do i learn basic trigonometry</p>
+            <p> - linda provide a list of good books for learning basic chemistry</p>
+            <p> - linda define demand and supply in simple terms</p>
+            <p> - linda what is the defination of geography</p>
+        </div>
+        </div>
+        <div id="actionButtons">
+          <button id="startVoiceRecognition" class="voice-action-btn" onclick="startVoiceRecognition()">
+            <i class="bi bi-mic"></i>
+          </button>
+          <button class="btn btn-primary" id="start-button">
+            <a id="start-link"><i class="bi bi-play"></i> Start</a> 
+           </button>
+           <div id="loading" style="display: none; text-align: center; margin-top: 20px;">
+            <img src="assets/loading.gif" alt="Loading..." width="100px" height="100px" />
+           </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- END OF POPUPS -->
+
+         <!-- settings -->
+  <div id="settings" class="modal">
+    <div class="modal-content handtouch-modal-content">
+      <span class="close" onclick="closeModal('settings')">&times;</span>
+       <form method="POST" action="{{ url_for('save_settings') }}">
+          <label>Brightness</label>
+          <!--<input type="number" Start="0" last="100"></input>-->
+          <input type="range"  name="brightness" id="brightness-slider" min="0" max="100" value="100" oninput="adjustBrightness()">
+          <label>System Volume</label>
+          <input type="range" id="volume" name="volume" min="0" max="100" required>
+          <label>username</label>
+          <input type="text" placeholder="username" id="name" name="username"></input>
+          <button type="submit">Save Settings</button>
+       </form>
+    </div>
+  </div>
+
+  </body>
+
+  <!-- wheather -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="eel.js"></script>
+<script>
+
+
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+
+
+    function updateDate() {
+      const date = new Date();
+      const day = date.toLocaleDateString('en-US', { weekday: 'long' });
+      const month = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+      const hours = date.getHours().toString().padStart(2, '0'); // Pad hours with leading zero
+      const minutes = date.getMinutes().toString().padStart(2, '0'); // Pad minutes with leading zero
+      const seconds = date.getSeconds().toString().padStart(2, '0');
+
+
+      const time = `${hours}:${minutes}`;
+      const timesecs = `${hours}:${minutes}:${seconds}`;
+
+
+      document.querySelector('.day').textContent = day;
+      document.querySelector('.month').textContent = month;
+      document.querySelector('.time').textContent = time;
+      document.querySelector('.timewithseconds').textContent = timesecs;
+    }
+  
+    updateDate();
+    setInterval(updateDate, 1000);
+
+
+    ///////////////CONNECT TO WIFI ////////////////////////////
+
+
+    function enterpass(wifi_name) {
+      document.getElementById("passinput").style.display="block";
+      document.getElementById("passinput").style.display = "block";
+      document.getElementById("connwifiname").textContent = wifi_name;
+  }
+
+  function close() {
+    document.getElementById("passinput").style.display="none";
+}
+
+
+function submitForm(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Collect form data
+  const ssid = document.getElementById("connwifiname").textContent.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // AJAX request to send data to Python backend
+  $.ajax({
+    url: '/connect-to-wifi', // Replace with your backend endpoint URL
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({ ssid: ssid, password: password }),
+    success: function(response) {
+      console.log(response); // Log response from backend (optional)
+    },
+    error: function(xhr, status, error) {
+      console.error('Error:', error);
+    }
+  });
+
+  // Optional: Reset form fields after submission
+  document.getElementById("password").value = '';
+}
+    
+    ///////////////END OF WIFI CONNECTION////////////////
+
+
+   ////////////////wheather ////////////////////////////
+
+    $(document).ready(function() {
+        // Function to update weather information
+        function updateWeather() {
+            // Replace 'YOUR_API_KEY' with your WeatherAPI.com API key
+            const apiKey = '29a54d2a4d884b74bb465647240407';
+            const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Manzini`; // Replace 'YourCity' with your city name
+
+            $.ajax({
+                url: apiUrl,
+                dataType: 'json',
+                success: function(data) {
+                    const weather = data.current.condition.text;
+                    const tempC = data.current.temp_c;
+                    const weatherHtml = `<i class="bi bi-clouds-fill"></i><span class="month">${weather}, ${tempC}&#8451;</span>`;
+                    $('#weather').html(weatherHtml);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching weather:', error);
+                    $('#weather').html('<i class="bi bi-clouds-fill"></i><span class="month">!Failed to get</span>');
+                }
+            });
+        }
+
+        updateWeather();
+        setInterval(updateWeather, 1800000); // Adjust interval as needed
+    });
+
+    ////////////////////////////   END OF WHEATHER ///////////
+
+
+
+
+    //LIVE VIDEO
+    //const videoElement = document.getElementById('myVideo');
+    //navigator.mediaDevices.getUserMedia({ video: true })
+      //  .then(stream => {
+        //    videoElement.srcObject = stream;
+       // }); 
+
+
+    function checkTimeAndPlaySound(hour, minute) {
+        // Get current date and time
+        let now = new Date();
+        let currentHour = now.getHours();
+        let currentMinute = now.getMinutes();
+    
+        // Check if current time matches specified time
+        if (currentHour === hour && currentMinute === minute) {
+            // Play sound (assuming you have an <audio> element with id="myAudio" in your HTML)
+            let audio = new Audio('ringtone/aud-20240709-wa0001-63081.mp3'); // Replace with actual path
+            audio.play();
+        }
+    }
+    
+    // Example usage: Check for 10:30 AM
+    checkTimeAndPlaySound(17, 40);
+
+
+    /////////////////////// ANIMATE ON SCROLL ///////////////////////////////
+
+
+    function showBody() {
+        document.body.classList.add('visible');
+    }
+  
+    document.addEventListener('DOMContentLoaded', function() {
+        showBody();
+        animateAppItems(); // Call this if you want to check for app items immediately
+    });
+
+
+// Function to check if an element is in the viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to add 'visible' class to app items in view
+function animateAppItems() {
+    const appItems = document.querySelectorAll('.app-item');
+    appItems.forEach(item => {
+        if (isElementInViewport(item)) {
+            item.classList.add('visible');
+        }
+    });
+}
+
+// Listen for scroll and resize events
+window.addEventListener('scroll', animateAppItems);
+window.addEventListener('resize', animateAppItems);
+
+// Initial check to animate items on load
+document.addEventListener('DOMContentLoaded', animateAppItems);
+    /////////////////////// END OF ANIMATE /////////////////////////////////
+
+    function openWebsite(url) {
+        eel.open_website(url)(); // Call the Python function to open the URL
+    }
+
+    function open_website_pyqt(url) {
+        window.open(url, '_blank'); // This opens in a new tab/window using browser's default mechanism
+        // Alternatively, consider using a dedicated PyQt signal/slot mechanism to trigger your PyQt code.
+    }
+
+
+    //////////// SEARCH ///////////////////////
+    document.getElementById("search").addEventListener("input", function () {
+      const searchQuery = this.value.toLowerCase(); // Get the search input and convert it to lowercase for case-insensitive matching
+      const appItems = document.querySelectorAll(".app-item"); // Select all app items
+  
+      appItems.forEach(function (item) {
+        const appName = item.querySelector("h2").textContent.toLowerCase(); // Get the name of the app in lowercase
+        if (appName.includes(searchQuery)) {
+          item.style.display = "block"; // Show app item if it matches the search query
+        } else {
+          item.style.display = "none"; // Hide app item if it doesn't match the search query
+        }
+      });
+    });
+
+    /////////////////////////////////////////
+
+
+    //document.getElementById("start-button").addEventListener("click", function () {
+      // Show the loading GIF
+      //document.getElementById("loading").style.display = "block";
+
+      // Call the Python function through Eel
+      //eel.start_linda_voice_assistant()(function() {
+          // Hide the loading GIF after the function finishes
+        //  document.getElementById("loading").style.display = "none";
+    //  });
+  //});
+
+  $(document).ready(function() {
+    $('#start-link').click(function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Show loading GIF
+        $('#loading').show();
+
+        // Call the Python function
+        eel.say_hello_py();
+
+        // Hide loading GIF after a timeout (adjust as necessary)
+        setTimeout(function() {
+            $('#loading').hide();
+        }, 3000); // Adjust this duration based on your function's execution time
+    });
+});
+
+
+//////////////// NO TOUCH /////////////////////////////
+
+$(document).ready(function() {
+  $('#start-link2').click(function(event) {
+      event.preventDefault(); // Prevent the default anchor behavior
+
+      // Show loading GIF
+      $('#loading2').show();
+
+      // Call the Python function
+      eel.notouch();
+
+      // Hide loading GIF after a timeout (adjust as necessary)
+      setTimeout(function() {
+          $('#loading2').hide();
+      }, 3000); // Adjust this duration based on your function's execution time
+  });
+});
+
+
+/////////////// END OF NO TOUCH ///////////////////////
+</script>
+</html>
